@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         options: {
           port: 9393,
           hostname: '0.0.0.0',
-          base: 'dist'
+          base: '.'
         }
       }
     }
@@ -119,8 +119,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-autoprefixer');
 
   grunt.registerTask('build', ['clean', 'jshint', 'concat', 'uglify', 'sass', 'autoprefixer']);
-  //grunt.renameTask( 'watch', 'delta' );
-  //grunt.registerTask('watch', ['connect', 'delta']);
+  grunt.renameTask( 'watch', 'delta' );
+  grunt.registerTask('watch', ['connect', 'delta']);
   grunt.registerTask('default', ['build']);
 
 };
