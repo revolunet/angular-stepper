@@ -17,6 +17,16 @@ angular.module('revolunet.stepper', [])
                 iElement.find('div').text(ngModelController.$viewValue);
             };
 
+            // when model change, cast to integer
+            ngModelController.$formatters.push(function(value) {
+                return parseInt(value, 10);
+            });
+
+            // when view change, cast to integer
+            ngModelController.$parsers.push(function(value) {
+                return parseInt(value, 10);
+            });
+
             function checkValidity() {
                 // check if min/max defined to check validity
                 var valid = !(scope.isOverMin(true) || scope.isOverMax(true));
@@ -55,6 +65,7 @@ angular.module('revolunet.stepper', [])
 
             // check validity on start, in case we're directly out of bounds
             checkValidity();
+
             // watch out min/max and recheck validity when they change
             scope.$watch('min+max', function() {
                 checkValidity();

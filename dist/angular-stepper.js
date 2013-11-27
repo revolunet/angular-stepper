@@ -1,4 +1,4 @@
-/*! angular-stepper - v0.0.1 - 2013-11-27
+/*! angular-stepper - v0.0.1 - 2013-11-28
 * Copyright (c) Julien Bouquillon [revolunet] 2013; Licensed  */
 angular.module('revolunet.stepper', [])
 
@@ -18,6 +18,16 @@ angular.module('revolunet.stepper', [])
             ngModelController.$render = function() {
                 iElement.find('div').text(ngModelController.$viewValue);
             };
+
+            // when model change, cast to integer
+            ngModelController.$formatters.push(function(value) {
+                return parseInt(value, 10);
+            });
+
+            // when view change, cast to integer
+            ngModelController.$parsers.push(function(value) {
+                return parseInt(value, 10);
+            });
 
             function checkValidity() {
                 // check if min/max defined to check validity
@@ -57,6 +67,7 @@ angular.module('revolunet.stepper', [])
 
             // check validity on start, in case we're directly out of bounds
             checkValidity();
+
             // watch out min/max and recheck validity when they change
             scope.$watch('min+max', function() {
                 checkValidity();
