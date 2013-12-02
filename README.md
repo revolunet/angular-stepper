@@ -1,8 +1,22 @@
-# angular-stepper
+# Angular stepper directive
 
 A simple numeric stepper.
 
 Making of : http://blog.revolunet.com/blog/2013/11/28/create-resusable-angularjs-input-component/
 
-Licence : MIT
+## Usage
+
+add a dependency to your app :
+```javascript
+angular.module('MyApp', [
+    'revolunet.stepper'
+]);
+```
+use the directive :
+```html
+<div rn-stepper ng-model="product.quantity" min="config.min" max="config.max"></div>
+```
+
+## Licence
+Licensed under the permissive MIT license
 
