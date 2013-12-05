@@ -78,14 +78,14 @@ module.exports = function(grunt) {
         dest: '<%= sass.dev.dest %>'
       }
     },
-    delta: {
+    watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['build']
       },
       js: {
-        files: '<%= config.js %>',
-        tasks: ['build']
+        files: ['<%= config.js %>', '**/*.spec.js'],
+        tasks: ['karma:unit:run', 'build']
       },
       scss: {
         files: '<%= config.src %>/scss/**/*.scss',
@@ -104,6 +104,13 @@ module.exports = function(grunt) {
           base: '.'
         }
       }
+    },
+    karma: {
+        unit: {
+            configFile: 'karma-unit.js',
+            background: true,
+            browsers: ['Chrome', 'Firefox']
+        }
     }
   });
 
@@ -117,10 +124,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.registerTask('build', ['clean', 'jshint', 'concat', 'uglify', 'sass', 'autoprefixer']);
-  grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask('watch', ['connect', 'delta']);
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', ['karma:unit', 'connect', 'watch']);
 
 };
