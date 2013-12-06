@@ -32,7 +32,6 @@ angular.module('revolunet.stepper', [])
             function checkValidity() {
                 // check if min/max defined to check validity
                 var valid = !(scope.isOverMin(true) || scope.isOverMax(true));
-              //  console.log('checkValidity', valid, scope.min, ngModelController.$viewValue);
                 // set our model validity
                 // the outOfBounds is an arbitrary key for the error.
                 // will be used to generate the CSS class names for the errors
@@ -69,7 +68,6 @@ angular.module('revolunet.stepper', [])
 
             // watch out min/max and recheck validity when they change
             scope.$watch('min+max', function() {
-                //console.log('min updated');
                 checkValidity();
             });
         }

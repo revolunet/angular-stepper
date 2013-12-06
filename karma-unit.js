@@ -16,25 +16,28 @@ module.exports = function ( karma ) {
       "src/angular-stepper.spec.js"
     ],
 
-/*
     preprocessors: {
-        "src/angular-stepper.js": ['coverage']
+        'src/angular-stepper.js': ['coverage']
     },
-*/
+
     frameworks: [ 'jasmine' ],
-    plugins: [ 'karma-jasmine', 'karma-firefox-launcher', 'karma-chrome-launcher'],
+    plugins: [ 'karma-jasmine', 'karma-firefox-launcher', 'karma-chrome-launcher', 'karma-coverage'],
 
     logLevel:  'WARN',
     /**
      * How to report, by default.
      */
-    reporters: ['dots'],
+    reporters: ['dots', 'coverage'],
 
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
     /**
      * On which port should the browser connect, on which port is the test runner
      * operating, and what is the URL path for the browser to use.
      */
-    port: 7018,
+    port: 7019,
     urlRoot: '/',
 
     /**
