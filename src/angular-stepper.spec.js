@@ -20,8 +20,8 @@ describe('rnStepper directive', function() {
         // compile the tpl with the $rootScope created above
         // wrap our directive inside a form to be able to test
         // that our form integration works well (via ngModelController)
-        if (!tpl) tpl = '<div rn-stepper ng-model="testModel"></div></form>';
-        tpl = '<form name="form">' + tpl + '</tpl>';
+        if (!tpl) tpl = '<div rn-stepper ng-model="testModel"></div>';
+        tpl = '<form name="form">' + tpl + '</form>';
         // inject allows you to use AngularJS dependency injection
         // to retrieve and use other services
         inject(function($compile) {
