@@ -8,6 +8,8 @@ Making of : http://blog.revolunet.com/blog/2013/11/28/create-resusable-angularjs
 
 ## Usage
 
+install with bower : `bower install angular-stepper`
+
 add a dependency to your app :
 ```javascript
 angular.module('MyApp', [

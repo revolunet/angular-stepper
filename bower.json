@@ -1,0 +1,26 @@
+{
+  "name": "angular-stepper",
+  "version": "0.0.1",
+  "homepage": "https://github.com/revolunet/angular-stepper",
+  "authors": [
+    "Julien Bouquillon <julien@revolunet.com>"
+  ],
+  "description": "Numeric stepper for AngularJS",
+  "main": "src/angular-stepper.js",
+  "keywords": [
+    "angular",
+    "stepper",
+    "form"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.5"
+  }
+}
