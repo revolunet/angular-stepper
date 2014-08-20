@@ -8,13 +8,22 @@ angular.module('revolunet.stepper', [])
             min: '=',
             max: '='
         },
-        template: '<button ng-disabled="isOverMin()" ng-click="decrement()">-</button>' +
+        template: '<button type="button" ng-disabled="isOverMin()" ng-click="decrement()">-</button>' +
                   '<div></div>' +
-                  '<button ng-disabled="isOverMax()" ng-click="increment()">+</button>',
+                  '<button type="button" ng-disabled="isOverMax()" ng-click="increment()">+</button>',
         link: function(scope, iElement, iAttrs, ngModelController) {
 
+            scope.label = '';
+
+            if (angular.isDefined(iAttrs.label)) {
+                iAttrs.$observe('label', function(value) {
+                    scope.label = ' ' + value;
+                    ngModelController.$render();
+                });
+            }
+
             ngModelController.$render = function() {
-                iElement.find('div').text(ngModelController.$viewValue);
+                iElement.find('div').text(ngModelController.$viewValue + scope.label);
                 // update the validation status
                 checkValidity();
             };

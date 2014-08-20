@@ -37,7 +37,7 @@ div[rn-stepper] button:active {
 
 div[rn-stepper] div {
   vertical-align: top;
-  width: 40px;
+  padding: 0 10px;
   background: #eeeeee;
   text-align: center;
   display: inline-block;
