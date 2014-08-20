@@ -8,9 +8,9 @@ angular.module('revolunet.stepper', [])
             min: '=',
             max: '='
         },
-        template: '<button ng-disabled="isOverMin()" ng-click="decrement()">-</button>' +
+        template: '<button type="button" ng-disabled="isOverMin()" ng-click="decrement()">-</button>' +
                   '<div></div>' +
-                  '<button ng-disabled="isOverMax()" ng-click="increment()">+</button>',
+                  '<button type="button" ng-disabled="isOverMax()" ng-click="increment()">+</button>',
         link: function(scope, iElement, iAttrs, ngModelController) {
 
             scope.label = '';
