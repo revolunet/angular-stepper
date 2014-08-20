@@ -1,5 +1,4 @@
 $stepper-height: 40px;
-$stepper-value-width: 40px;
 $stepper-button-width: 40px;
 $stepper-border-width: 1px;
 $stepper-button-bg: #4D4DFF;
@@ -37,13 +36,13 @@ div[rn-stepper] {
     }
     div {
         vertical-align:top;
-        width:$stepper-value-width;
+        padding: 0 10px;
         background:$stepper-value-bg;
         text-align:center;
-        display:inline-block;    
+        display:inline-block;
         height:$stepper-height;
         line-height:$stepper-height;
         box-sizing:border-box;
-        
+
     }
 }

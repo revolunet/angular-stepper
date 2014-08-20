@@ -13,8 +13,17 @@ angular.module('revolunet.stepper', [])
                   '<button ng-disabled="isOverMax()" ng-click="increment()">+</button>',
         link: function(scope, iElement, iAttrs, ngModelController) {
 
+            scope.label = '';
+
+            if (angular.isDefined(iAttrs.label)) {
+                iAttrs.$observe('label', function(value) {
+                    scope.label = ' ' + value;
+                    ngModelController.$render();
+                });
+            }
+
             ngModelController.$render = function() {
-                iElement.find('div').text(ngModelController.$viewValue);
+                iElement.find('div').text(ngModelController.$viewValue + scope.label);
                 // update the validation status
                 checkValidity();
             };

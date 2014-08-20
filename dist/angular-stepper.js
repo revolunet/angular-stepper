@@ -1,5 +1,5 @@
-/*! angular-stepper - v0.0.1 - 2013-12-06
-* Copyright (c) Julien Bouquillon [revolunet] 2013; Licensed  */
+/*! angular-stepper - v0.0.1 - 2014-08-20
+* Copyright (c) Julien Bouquillon [revolunet] 2014; Licensed  */
 angular.module('revolunet.stepper', [])
 
 .directive('rnStepper', function() {
@@ -15,8 +15,17 @@ angular.module('revolunet.stepper', [])
                   '<button ng-disabled="isOverMax()" ng-click="increment()">+</button>',
         link: function(scope, iElement, iAttrs, ngModelController) {
 
+            scope.label = '';
+
+            if (angular.isDefined(iAttrs.label)) {
+                iAttrs.$observe('label', function(value) {
+                    scope.label = ' ' + value;
+                    ngModelController.$render();
+                });
+            }
+
             ngModelController.$render = function() {
-                iElement.find('div').text(ngModelController.$viewValue);
+                iElement.find('div').text(ngModelController.$viewValue + scope.label);
                 // update the validation status
                 checkValidity();
             };
@@ -98,8 +107,8 @@ describe('rnStepper directive', function() {
         // compile the tpl with the $rootScope created above
         // wrap our directive inside a form to be able to test
         // that our form integration works well (via ngModelController)
-        if (!tpl) tpl = '<div rn-stepper ng-model="testModel"></div></form>';
-        tpl = '<form name="form">' + tpl + '</tpl>';
+        if (!tpl) tpl = '<div rn-stepper ng-model="testModel"></div>';
+        tpl = '<form name="form">' + tpl + '</form>';
         // inject allows you to use AngularJS dependency injection
         // to retrieve and use other services
         inject(function($compile) {
