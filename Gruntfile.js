@@ -13,7 +13,10 @@ module.exports = function(grunt) {
     config: {
       dist:'./dist',
       src: './src',
-      js: '<%= config.src %>/**/*.js'
+      js: [
+        '<%= config.src %>/**/*.js',
+        '!<%= config.src %>/**/*.spec.js'
+      ]
     },
     clean: ['<%= config.dist %>'],
     copy: {
