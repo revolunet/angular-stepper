@@ -1,4 +1,4 @@
-/*! angular-stepper - v0.0.1 - 2014-09-02
+/*! angular-stepper - v0.0.2 - 2014-09-03
 * Copyright (c) Julien Bouquillon [revolunet] 2014; Licensed  */
 angular.module('revolunet.stepper', [])
 
