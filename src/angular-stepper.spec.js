@@ -149,15 +149,10 @@ describe('rnStepper directive', function() {
         // same for MAX
     });
     describe('increment', function() {
-        it('should increment model value', function() {
+        it('should increment value', function() {
             compileDirective();
             elm.isolateScope().increment();
             expect(scope.testModel).toEqual(43);
-        });
-        it('should update view', function() {
-            compileDirective();
-            elm.isolateScope().increment();
-            expect(elm.find('input').val()).toEqual('43');
         });
         it('should update form dirty state', function() {
             compileDirective();
@@ -167,15 +162,10 @@ describe('rnStepper directive', function() {
         });
     });
     describe('decrement', function() {
-        it('should decrement model value', function() {
+        it('should decrement value', function() {
             compileDirective();
             elm.isolateScope().decrement();
             expect(scope.testModel).toEqual(41);
-        });
-        it('should update view', function() {
-            compileDirective();
-            elm.isolateScope().decrement();
-            expect(elm.find('input').val()).toEqual('41');
         });
         it('should update form dirty state', function() {
             compileDirective();

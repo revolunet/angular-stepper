@@ -24,7 +24,6 @@ angular.module('revolunet.stepper', [])
             }
 
             ngModelController.$render = function() {
-                iElement.find('input').val(ngModelController.$viewValue);
                 // update the validation status
                 checkValidity();
             };
