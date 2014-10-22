@@ -6,10 +6,11 @@ angular.module('revolunet.stepper', [])
         require: 'ngModel',
         scope: {
             min: '=',
-            max: '='
+            max: '=',
+            ngModel: '='
         },
         template: '<button type="button" ng-disabled="isOverMin()" ng-click="decrement()">-</button>' +
-                  '<div></div>' +
+                  '<input type="text" ng-model="ngModel">' +
                   '<button type="button" ng-disabled="isOverMax()" ng-click="increment()">+</button>',
         link: function(scope, iElement, iAttrs, ngModelController) {
 
@@ -23,7 +24,7 @@ angular.module('revolunet.stepper', [])
             }
 
             ngModelController.$render = function() {
-                iElement.find('div').text(ngModelController.$viewValue + scope.label);
+                iElement.find('input').val(ngModelController.$viewValue);
                 // update the validation status
                 checkValidity();
             };

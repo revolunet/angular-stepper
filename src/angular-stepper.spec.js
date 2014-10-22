@@ -37,9 +37,9 @@ describe('rnStepper directive', function() {
             compileDirective();
         });
         // a single test example
-        it('should produce 2 buttons and a div', function() {
+        it('should produce 2 buttons and a input', function() {
             expect(elm.find('button').length).toEqual(2);
-            expect(elm.find('div').length).toEqual(1);
+            expect(elm.find('input').length).toEqual(1);
         });
         it('should check validity on init', function() {
             expect(scope.form.$valid).toBeTruthy();
@@ -157,7 +157,7 @@ describe('rnStepper directive', function() {
         it('should update view', function() {
             compileDirective();
             elm.isolateScope().increment();
-            expect(elm.find('div').html()).toEqual('43');
+            expect(elm.find('input').val()).toEqual('43');
         });
         it('should update form dirty state', function() {
             compileDirective();
@@ -175,7 +175,7 @@ describe('rnStepper directive', function() {
         it('should update view', function() {
             compileDirective();
             elm.isolateScope().decrement();
-            expect(elm.find('div').html()).toEqual('41');
+            expect(elm.find('input').val()).toEqual('41');
         });
         it('should update form dirty state', function() {
             compileDirective();
@@ -184,5 +184,5 @@ describe('rnStepper directive', function() {
             expect(scope.form.$dirty).toBeTruthy();
         });
     });
-    
+
 });
