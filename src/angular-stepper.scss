@@ -3,46 +3,46 @@ $stepper-button-width: 40px;
 $stepper-border-width: 1px;
 $stepper-button-bg: #4D4DFF;
 $stepper-value-bg: #eee;
+$stepper-value-error: #FF3B34;
 div[rn-stepper] {
-    &.ng-invalid-out-of-bounds {
-        div {
-            color: red;
-        }
-    }
+    box-sizing:border-box;
     border:1px solid #bbb;
     display:inline-block;
     height:$stepper-height + ($stepper-border-width * 2);
-    box-sizing:border-box;
-    button {
-         &[disabled] {
-            opacity: 0.3;
+    &.ng-invalid-out-of-bounds {
+        input {
+            color: $stepper-value-error;
+            border:3px solid $stepper-value-error;
         }
+    }
+    button {
+        box-sizing: border-box;
         appearance:none;
-        -webkit-appearance:none;
         margin:0;
         border:0;
         width: $stepper-button-width;
-        height:$stepper-height;
-        box-sizing:border-box;
+        height: $stepper-height;
         background: $stepper-button-bg;
         color: white;
         font-weight:bold;
         font-size:20px;
-         outline: none;
+        outline: none;
+        &[disabled] {
+            opacity: 0.3;
+        }
         &:active {
             box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
             background: darken($stepper-button-bg, 5%);
        }
     }
-    div {
+    input {
         vertical-align:top;
-        padding: 0 10px;
+        padding: 0;
         background:$stepper-value-bg;
         text-align:center;
         display:inline-block;
         height:$stepper-height;
         line-height:$stepper-height;
         box-sizing:border-box;
-
     }
 }

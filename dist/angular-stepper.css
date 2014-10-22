@@ -1,24 +1,24 @@
 div[rn-stepper] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   border: 1px solid #bbb;
   display: inline-block;
   height: 42px;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
-div[rn-stepper].ng-invalid-out-of-bounds div {
-  color: red;
+div[rn-stepper].ng-invalid-out-of-bounds input {
+  color: #ff3b34;
+  border: 3px solid #ff3b34;
 }
 
 div[rn-stepper] button {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   appearance: none;
-  -webkit-appearance: none;
   margin: 0;
   border: 0;
   width: 40px;
   height: 40px;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   background: #4d4dff;
   color: white;
   font-weight: bold;
@@ -35,9 +35,9 @@ div[rn-stepper] button:active {
   background: #3333ff;
 }
 
-div[rn-stepper] div {
+div[rn-stepper] input {
   vertical-align: top;
-  padding: 0 10px;
+  padding: 0;
   background: #eeeeee;
   text-align: center;
   display: inline-block;

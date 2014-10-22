@@ -1,4 +1,4 @@
-/*! angular-stepper - v0.0.2 - 2014-09-03
+/*! angular-stepper - v0.0.3 - 2014-10-22
 * Copyright (c) Julien Bouquillon [revolunet] 2014; Licensed  */
 angular.module('revolunet.stepper', [])
 
@@ -8,10 +8,11 @@ angular.module('revolunet.stepper', [])
         require: 'ngModel',
         scope: {
             min: '=',
-            max: '='
+            max: '=',
+            ngModel: '='
         },
         template: '<button type="button" ng-disabled="isOverMin()" ng-click="decrement()">-</button>' +
-                  '<div></div>' +
+                  '<input type="text" ng-model="ngModel">' +
                   '<button type="button" ng-disabled="isOverMax()" ng-click="increment()">+</button>',
         link: function(scope, iElement, iAttrs, ngModelController) {
 
@@ -25,7 +26,6 @@ angular.module('revolunet.stepper', [])
             }
 
             ngModelController.$render = function() {
-                iElement.find('div').text(ngModelController.$viewValue + scope.label);
                 // update the validation status
                 checkValidity();
             };
