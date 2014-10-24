@@ -12,3 +12,4 @@ script: gulp
 after_success:
 - git config --global user.email "tracis@ci.org"
 - git config --global user.name "Travis Bot"
+- gulp ng-factory:ci:publish
