@@ -4,32 +4,38 @@
  * @namespace revolunet.stepper
  */
 
- angular.module('revolunet.stepper', [])
-/**
- * @ngdoc directive
- * @memberOf revolunet.stepper
- * @name rnStepper
- * @restrict AE
- *
- * @description
- * The numeric stepper directive.
- *
- * @min {integer} - minimum value
- * @max {integer} - maximum value
- * @ngModel {integer} - model to bind to the stepper
- *
- */
-.directive('rnStepper', function() {
-  return {
-    restrict: 'AE',
-    require: 'ngModel',
-    scope: {
-      min: '=',
-      max: '=',
-      ngModel: '='
-    },
-    templateUrl: 'angular-stepper.tpl.html',
-    link: function(scope, iElement, iAttrs, ngModelController) {
+angular.module('revolunet.stepper', [])
+  .directive('rnStepper', function() {
+
+    /**
+     * @ngdoc directive
+     * @memberOf revolunet.stepper
+     * @name rnStepper
+     * @restrict AE
+     *
+     * @description
+     * The numeric stepper directive.
+     *
+     * @param {Number} ngModel - model to bind to the stepper
+     * @param {Number} [min] - minimum value
+     * @param {Number} [max] - maximum value
+     *
+     */
+    return {
+      restrict: 'AE',
+      require: 'ngModel',
+      scope: {
+        min: '=',
+        max: '=',
+        ngModel: '='
+      },
+      templateUrl: 'angular-stepper.tpl.html',
+      link: postLink
+    };
+
+    ////
+
+    function postLink(scope, iElement, iAttrs, ngModelController) {
 
       scope.label = '';
 
@@ -97,5 +103,5 @@
         checkValidity();
       });
     }
-  };
-});
+  })
+;
