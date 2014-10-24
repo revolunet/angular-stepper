@@ -2,12 +2,20 @@
 
 var gulp = require('gulp');
 var pkg = require('./package.json');
+var run = require('run-sequence');
 
 // CONFIG
 //
 var config = require('./ngfactory.json');
 config.pkg = pkg;
+
+config.requireTransform = function(name){
+  return require('./transforms/' + name);
+};
+
+
 require('ng-factory')(gulp, config);
+
 
 // TASKS
 //
@@ -21,6 +29,13 @@ gulp.task('serve', function() {
 gulp.task('test', function() {
   runSequence('ng-factory:test/clean', 'ng-factory:src/karma~init', 'ng-factory:src/karma');
 });
+gulp.task('readme', function (cb) {
+  run(
+    'ng-factory:docs/ngdocs',
+    'ng-factory:docs/readme',
+    cb);
+});
+
 
 // ALIASES
 //
