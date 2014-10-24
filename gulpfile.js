@@ -23,17 +23,14 @@ var runSequence = require('run-sequence');
 gulp.task('build', function() {
   runSequence('ng:dist/clean', ['ng:dist/templates', 'ng:dist/scripts', 'ng:dist/styles']);
 });
+gulp.task('test', function() {
+  runSequence('ng:test/clean', 'ng:test/templates', 'ng:src/karma~init', 'ng:src/karma');
+});
 gulp.task('serve', function() {
   runSequence('ng-factory:src/clean', 'ng-factory:src/views', ['ng-factory:src/serve', 'ng-factory:src/watch']);
 });
-gulp.task('test', function() {
-  runSequence('ng-factory:test/clean', 'ng-factory:src/karma~init', 'ng-factory:src/karma');
-});
 gulp.task('readme', function (cb) {
-  run(
-    'ng-factory:docs/ngdocs',
-    'ng-factory:docs/readme',
-    cb);
+  runSequence('ng-factory:docs/ngdocs', 'ng-factory:docs/readme', cb);
 });
 
 
