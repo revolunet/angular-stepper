@@ -6,7 +6,7 @@
 
 angular.module('revolunet.stepper', [])
   .directive('rnStepper', function() {
-    
+
     /**
      * @ngdoc directive
      * @memberOf revolunet.stepper
@@ -16,9 +16,9 @@ angular.module('revolunet.stepper', [])
      * @description
      * The numeric stepper directive.
      *
-     * @param {Number} min - minimum value
-     * @param {Number} max - maximum value
      * @param {Number} ngModel - model to bind to the stepper
+     * @param {Number} [min] - minimum value
+     * @param {Number} [max] - maximum value
      *
      */
     return {
