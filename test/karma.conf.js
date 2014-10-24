@@ -15,7 +15,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
 
-    // list of files / patterns to load in the browser
+    // list of files / patterns to load in the browser (auto-filled with gulp-inject)
     files: [
     ],
 
