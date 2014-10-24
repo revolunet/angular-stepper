@@ -1,30 +1,74 @@
-# Angular stepper directive
+# angular-stepper
+[![Build Status](http://img.shields.io/travis/revolunet/angular-stepper.svg)](http://travis-ci.org/revolunet/angular-stepper) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/revolunet/angular-stepper.svg)](http://url) [![Github Releases](http://img.shields.io/badge/release-v0.0.3-orange.svg)](http://github.com/revolunet/angular-stepper/releases) [![Github Issues](http://img.shields.io/github/issues/revolunet/angular-stepper.svg)](http://github.com/revolunet/angular-stepper/issues) 
 
-A simple numeric stepper.
+
+> A stepper input
+
+```html
+<div rn-stepper ng-model="quantity" min="0" max="25"></div>
+```
 
 Demo : http://jsfiddle.net/26ghx/embedded/result/
 
 Making of : http://blog.revolunet.com/blog/2013/11/28/create-resusable-angularjs-input-component/
 
+## Install
+
+```sh
+$ bower install angular-stepper --save
+```
+
+## Examples
+
+
 ## Usage
 
-install with bower : `bower install angular-stepper`
 
-add a dependency to your app :
-```javascript
-angular.module('MyApp', [
-    'revolunet.stepper'
-]);
-```
-use the directive :
-```html
-<div rn-stepper ng-model="product.quantity" min="config.min" max="config.max"></div>
-```
-Note: Optionaly, you can add a detailed label
-```html
-<div rn-stepper ng-model="product.quantity" min="config.min" max="config.max" label="point"></div>
-```
 
-## Licence
-Licensed under the permissive MIT license
+
+
+
+
+
+### directive
+
+
+
+
+
+
+
+
+#### rnStepper
+
+
+The numeric stepper directive.
+
+@min {integer} - minimum value
+@max {integer} - maximum value
+@ngModel {integer} - model to bind to the stepper
+
+
+
+
+
+
+
+
+## Dependencies
+
+Package | Version
+------- | -------
+angular | **~1.2.5**
+
+
+## Browser Support
+
+[![Browser Support](https://ci.testling.com/.png)](http://ci.testling.com/)
+
+## Contributing
+Please submit all pull requests the against master branch. If your unit test contains JavaScript patches or features, you should include relevant unit tests. Thanks!
+
+## License
+
 
