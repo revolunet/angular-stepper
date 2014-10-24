@@ -1,11 +1,13 @@
-angular.module('example1', ['revolunet.stepper'])
+'use strict';
 
-.controller('Example1Ctrl', function() {
-    $scope.product = {
-        quantity:10
-    };
-    $scope.config = {
-        min: 5,
-        max: 15
-    };
+angular.module('ngFactoryDocs')
+
+.controller('Example2Ctrl', function($scope) {
+  $scope.product = {
+    quantity:10
+  };
+  $scope.config = {
+    min: 5,
+    max: 15
+  };
 });
