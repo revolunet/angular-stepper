@@ -26,9 +26,8 @@
       "url": "https://github.com/mgcrea/angular-strap/blob/master/LICENSE.md"
     }
   ],
-  "bugs": {
-    "url": "https://github.com/revolunet/angular-stepper/issues"
-  },
+  "homepage": "https://github.com/revolunet/angular-stepper",
+  "bugs": "https://github.com/revolunet/angular-stepper/issues",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
