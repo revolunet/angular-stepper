@@ -13,7 +13,7 @@ require('ng-factory')(gulp, config);
 //
 var runSequence = require('run-sequence');
 gulp.task('build', function() {
-  runSequence('ng-factory:dist/clean', ['ng-factory:dist/templates', 'ng-factory:dist/scripts', 'ng-factory:dist/styles']);
+  runSequence('ng:dist/clean', ['ng:dist/templates', 'ng:dist/scripts', 'ng:dist/styles']);
 });
 gulp.task('serve', function() {
   runSequence('ng-factory:src/clean', 'ng-factory:src/views', ['ng-factory:src/serve', 'ng-factory:src/watch']);
