@@ -24,6 +24,11 @@
             $scope.minScore = 45;
             $scope.maxScore = 50;
         });
+
+        .controller('DemoController3', function($scope) {
+            $scope.score = 5;
+            $scope.step = 5;
+        });
         </script>
     <head>
     <body ng-app="demo">
@@ -42,6 +47,12 @@
             Max score : {{ maxScore }}<br>
             <br>
             <div rn-stepper min="minScore" max="maxScore" label="point" ng-model="score"></div>
+        </div>
+        <div ng-controller="DemoController3">
+            Score : {{ score }}<br>
+            Step : {{ step }}<br>
+            <br>
+            <div rn-stepper step="step" ng-model="score"></div>
         </div>
     </body>
 </html>

@@ -24,6 +24,10 @@ Note: Optionaly, you can add a detailed label
 ```html
 <div rn-stepper ng-model="product.quantity" min="config.min" max="config.max" label="point"></div>
 ```
+Note: Optionaly, you can add a `step` attribute that specifies the  number intervals of the element:
+```html
+<div rn-stepper ng-model="product.quantity" min="config.min" max="config.max" step="10"></div>
+```
 
 ## Licence
 Licensed under the permissive MIT license

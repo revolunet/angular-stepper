@@ -7,7 +7,8 @@ angular.module('revolunet.stepper', [])
         scope: {
             min: '=',
             max: '=',
-            ngModel: '='
+            ngModel: '=',
+            step: '='
         },
         template: '<button type="button" ng-disabled="isOverMin()" ng-click="decrement()">-</button>' +
                   '<input type="text" ng-model="ngModel">' +
@@ -66,10 +67,12 @@ angular.module('revolunet.stepper', [])
 
             // update the value when user clicks the buttons
             scope.increment = function() {
-                updateModel(+1);
+                var increment = scope.step ? +scope.step : +1;
+                updateModel(increment);
             };
             scope.decrement = function() {
-                updateModel(-1);
+                var decrement = scope.step ? -scope.step : -1;
+                updateModel(decrement);
             };
 
             // check validity on start, in case we're directly out of bounds
