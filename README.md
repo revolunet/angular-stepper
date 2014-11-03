@@ -25,36 +25,6 @@ $ bower install angular-stepper --save
 
 
 
-
-
-
-
-
-### directive
-
-
-
-
-
-
-
-
-#### rnStepper
-
-
-The numeric stepper directive.
-
-@min {integer} - minimum value
-@max {integer} - maximum value
-@ngModel {integer} - model to bind to the stepper
-
-
-
-
-
-
-
-
 ## Dependencies
 
 Package | Version
@@ -62,13 +32,11 @@ Package | Version
 angular | **~1.2.5**
 
 
-## Browser Support
 
-[![Browser Support](https://ci.testling.com/.png)](http://ci.testling.com/)
 
 ## Contributing
 Please submit all pull requests the against master branch. If your unit test contains JavaScript patches or features, you should include relevant unit tests. Thanks!
 
 ## License
 
-
+MIT : https://github.com/mgcrea/angular-strap/blob/master/LICENSE.md

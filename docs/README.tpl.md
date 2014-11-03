@@ -1,5 +1,3 @@
-{% extends "node_modules/ng-factory/lib/templates/readme/README.tpl.md" %}
-
 {% block description -%}
 
 ```html

@@ -1,3 +1,5 @@
+'use strict';
+
 // describe keyword is used to define a test suite (group of tests)
 describe('rnStepper directive', function() {
 
