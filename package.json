@@ -34,7 +34,6 @@
   "devDependencies": {
     "gulp": "^3.8.9",
     "ng-factory": "angular-widgets/ng-factory#master",
-    "run-sequence": "^1.0.1",
     "angular-mocks": "^1.2"
   },
   "dependencies": {}

@@ -1,4 +1,4 @@
 {
-  "module": "revolunet.stepper",
-  "type": "component"
+  "type": "component",
+  "module": "revolunet.stepper"
 }
