@@ -1,8 +1,12 @@
 {
   "name": "angular-stepper",
-  "version": "0.0.3",
-  "description": "A stepper input",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Simple stepper input",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*",
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +14,7 @@
     "type": "git",
     "url": "git@github.com:revolunet/angular-stepper.git"
   },
-  "author": "Julien Bouquillon [revolunet]",
+  "author": "Julien Bouquillon <julien@revolunet.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/revolunet/angular-stepper/issues"

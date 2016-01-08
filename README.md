@@ -1,6 +1,6 @@
 # Angular stepper directive
 
-A simple numeric stepper.
+A simple numeric stepper for angular 1.x.
 
 Demo : http://jsfiddle.net/26ghx/embedded/result/
 
@@ -9,6 +9,8 @@ Making of : http://blog.revolunet.com/blog/2013/11/28/create-resusable-angularjs
 ## Usage
 
 install with bower : `bower install angular-stepper`
+
+Or npm : `npm install --save angular-stepper`
 
 add a dependency to your app :
 ```javascript
@@ -26,5 +28,5 @@ Note: Optionaly, you can add a detailed label
 ```
 
 ## Licence
-Licensed under the permissive MIT license
+Licensed under the permissive MIT license, contributions welcome
 
