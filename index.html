@@ -23,6 +23,14 @@
             $scope.score = 42;
             $scope.minScore = 45;
             $scope.maxScore = 50;
+        })
+
+        .controller('DemoController3', function ($scope) {
+            $scope.score = 42;
+            $scope.minScore = 45;
+            $scope.maxScore = 50;
+
+            $scope.disabled = false;
         });
         </script>
     <head>
@@ -42,6 +50,14 @@
             Max score : {{ maxScore }}<br>
             <br>
             <div rn-stepper min="minScore" max="maxScore" label="point" ng-model="score"></div>
+        </div>
+        <div ng-controller="DemoController3">
+            Score : {{ score }}<br>
+            Min score : {{ minScore }}<br>
+            Max score : {{ maxScore }}<br>
+            <button ng-click="disabled = !disabled">{{ (disabled ? 'Enable' : 'Disable') }}</button><br />
+            <br>
+            <div rn-stepper min="minScore" max="maxScore" label="point" ng-model="score" ng-disabled="disabled"></div>
         </div>
     </body>
 </html>
