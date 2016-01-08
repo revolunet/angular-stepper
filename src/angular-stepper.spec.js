@@ -148,6 +148,37 @@ describe('rnStepper directive', function() {
         });
         // same for MAX
     });
+
+    describe('ngDisabled integration', function () {
+        it('should add disabled attribute to elements when disabled', function() {
+            scope.disabled = true;
+            compileDirective('<div rn-stepper ng-model="testModel" ng-disabled="disabled"></div>');
+            expect(angular.element(elm[0]).attr('disabled')).toBeTruthy();
+            expect(angular.element(elm.find('button')[0]).attr('disabled')).toBeTruthy();
+            expect(angular.element(elm.find('button')[1]).attr('disabled')).toBeTruthy();
+            expect(angular.element(elm.find('input')[0]).attr('disabled')).toBeTruthy();
+        });
+
+        it('should not have disabled attribute when not disabled', function () {
+            scope.disabled = false;
+            compileDirective('<div rn-stepper ng-model="testModel" ng-disabled="disabled"></div>');
+            expect(angular.element(elm[0]).attr('disabled')).not.toBeDefined();
+            expect(angular.element(elm.find('button')[0]).attr('disabled')).not.toBeDefined();
+            expect(angular.element(elm.find('button')[1]).attr('disabled')).not.toBeDefined();
+            expect(angular.element(elm.find('input')[0]).attr('disabled')).not.toBeDefined();
+        });
+
+        it('should dynamically update ngDisabled attribute when the condition changes', function () {
+            scope.disabled = false;
+            compileDirective('<div rn-stepper ng-model="testModel" ng-disabled="disabled"></div>');
+            expect(angular.element(elm[0]).attr('disabled')).toBeFalsy();
+
+            scope.disabled = true;
+            scope.$digest();
+            expect(angular.element(elm[0]).attr('disabled')).toBeTruthy();
+        });
+    });
+
     describe('increment', function() {
         it('should increment value', function() {
             compileDirective();

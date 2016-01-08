@@ -7,8 +7,13 @@ div[rn-stepper] {
 }
 
 div[rn-stepper].ng-invalid-out-of-bounds input {
-  color: #ff3b34;
-  border: 3px solid #ff3b34;
+  color: #FF3B34;
+  border: 3px solid #FF3B34;
+}
+
+div[rn-stepper][disabled] input {
+  color: #aaa;
+  border: 0;
 }
 
 div[rn-stepper] button {
@@ -19,7 +24,7 @@ div[rn-stepper] button {
   border: 0;
   width: 40px;
   height: 40px;
-  background: #4d4dff;
+  background: #4D4DFF;
   color: white;
   font-weight: bold;
   font-size: 20px;
@@ -32,13 +37,13 @@ div[rn-stepper] button[disabled] {
 
 div[rn-stepper] button:active {
   box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
-  background: #3333ff;
+  background: #3434ff;
 }
 
 div[rn-stepper] input {
   vertical-align: top;
   padding: 0;
-  background: #eeeeee;
+  background: #eee;
   text-align: center;
   display: inline-block;
   height: 40px;
@@ -46,3 +51,5 @@ div[rn-stepper] input {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+/*# sourceMappingURL=angular-stepper.css.map */
