@@ -1,5 +1,5 @@
-/*! angular-stepper - v0.0.3 - 2014-10-22
-* Copyright (c) Julien Bouquillon [revolunet] 2014; Licensed  */
+/*! angular-stepper - v0.0.3 - 2016-01-08
+* Copyright (c) Julien Bouquillon [revolunet] 2016; Licensed  */
 angular.module('revolunet.stepper', [])
 
 .directive('rnStepper', function() {
@@ -9,11 +9,12 @@ angular.module('revolunet.stepper', [])
         scope: {
             min: '=',
             max: '=',
-            ngModel: '='
+            ngModel: '=',
+            ngDisabled: '='
         },
-        template: '<button type="button" ng-disabled="isOverMin()" ng-click="decrement()">-</button>' +
-                  '<input type="text" ng-model="ngModel">' +
-                  '<button type="button" ng-disabled="isOverMax()" ng-click="increment()">+</button>',
+        template: '<button type="button" ng-disabled="isOverMin() || ngDisabled" ng-click="decrement()">-</button>' +
+                  '<input type="text" ng-model="ngModel" ng-disabled="ngDisabled">' +
+                  '<button type="button" ng-disabled="isOverMax() || ngDisabled" ng-click="increment()">+</button>',
         link: function(scope, iElement, iAttrs, ngModelController) {
 
             scope.label = '';

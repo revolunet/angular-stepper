@@ -18,11 +18,11 @@ angular.module('MyApp', [
 ```
 use the directive :
 ```html
-<div rn-stepper ng-model="product.quantity" min="config.min" max="config.max"></div>
+<div rn-stepper ng-model="product.quantity" ng-disabled="config.totalAvailable < 1" min="config.min" max="config.max"></div>
 ```
 Note: Optionaly, you can add a detailed label
 ```html
-<div rn-stepper ng-model="product.quantity" min="config.min" max="config.max" label="point"></div>
+<div rn-stepper ng-model="product.quantity" ng-disabled="config.totalAvailable < 1" min="config.min" max="config.max" label="point"></div>
 ```
 
 ## Licence

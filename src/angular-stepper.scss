@@ -4,6 +4,7 @@ $stepper-border-width: 1px;
 $stepper-button-bg: #4D4DFF;
 $stepper-value-bg: #eee;
 $stepper-value-error: #FF3B34;
+$stepper-value-disabled-color: #aaa;
 div[rn-stepper] {
     box-sizing:border-box;
     border:1px solid #bbb;
@@ -15,6 +16,14 @@ div[rn-stepper] {
             border:3px solid $stepper-value-error;
         }
     }
+
+    &[disabled] {
+        input {
+            color: $stepper-value-disabled-color;
+            border: 0;
+        }
+    }
+
     button {
         box-sizing: border-box;
         appearance:none;
