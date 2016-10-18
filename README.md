@@ -1,4 +1,4 @@
-# Angular stepper directive
+# Angular stepper directive ![](https://img.shields.io/badge/maintained%3F-no!-red.svg?style=flat)
 
 A simple numeric stepper for angular 1.x.
 
